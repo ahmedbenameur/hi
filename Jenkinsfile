@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ahmedbenameur/hi.git'
+                git branch: 'master', url: 'https://github.com/ahmedbenameur/hi.git'
              
                 sh 'pwd'  // Print workspace contents
             }
@@ -18,7 +18,7 @@ pipeline {
 
        
 
-        stage('SonarQube Analysis') {
+     /*   stage('SonarQube Analysis') {
             steps {
                 script {
                     // Download and install SonarQube Scanner
@@ -49,6 +49,6 @@ pipeline {
                     '''
                 }
             }
-        }
+        }*/
     }
 }
