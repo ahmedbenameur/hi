@@ -18,9 +18,9 @@ pipeline {
 
        
 
-     /*   stage('SonarQube Analysis') {
+        stage('SonarQube Analysis') {
             steps {
-                script {
+            /*    script {
                     // Download and install SonarQube Scanner
                     sh '''
                         if ! command -v sonar-scanner &> /dev/null; then
@@ -35,7 +35,7 @@ pipeline {
                         ls -lR sonar-scanner-5.0.1.3006-linux
                         which sonar-scanner || echo "SonarQube Scanner not found in PATH"
                     '''
-                }
+                }*/
                 // Run SonarQube Scanner with updated PATH
                 withEnv(["PATH+SCANNER=${WORKSPACE}/sonar-scanner-5.0.1.3006-linux/bin"]) {
                     sh '''
