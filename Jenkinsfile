@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master', url: 'https://github.com/ahmedbenameur/hi.git'
-                sh 'javac output.java'  // Print current working directory
+              
             }
         }
         
