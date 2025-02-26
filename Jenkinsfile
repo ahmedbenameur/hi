@@ -20,9 +20,9 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-            /*    script {
+                script {
                     // Download and install SonarQube Scanner
-                    sh '''
+                 /*   sh '''
                         if ! command -v sonar-scanner &> /dev/null; then
                             echo "SonarQube Scanner not found. Installing..."
                             wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
