@@ -14,33 +14,12 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master', url: 'https://github.com/ahmedbenameur/hi.git'
-                
                 sh 'pwd'  // Print current working directory
             }
         }
         
         stage('SonarQube Analysis') {
             steps {
-                script {
-                    /*
-                    // Download and install SonarQube Scanner if not already installed
-                    sh '''
-                        if ! command -v sonar-scanner &> /dev/null; then
-                            echo "SonarQube Scanner not found. Installing..."
-                            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-                            unzip -o -q sonar-scanner-cli-5.0.1.3006-linux.zip
-                        fi
-                    '''
-                    
-                    // Verify SonarQube Scanner installation
-                    sh '''
-                        echo "PATH: $PATH"
-                        ls -lR sonar-scanner-5.0.1.3006-linux
-                        which sonar-scanner || echo "SonarQube Scanner not found in PATH"
-                    '''
-                    */
-                }
-                
                 // Run SonarQube Scanner with the correct environment
                 withEnv(["PATH+SCANNER=${WORKSPACE}/sonar-scanner-5.0.1.3006-linux/bin"]) {
                     sh '''
