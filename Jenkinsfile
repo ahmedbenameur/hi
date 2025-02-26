@@ -16,11 +16,7 @@ pipeline {
             }
         }
 
-        stage('Check') {
-            steps {
-                sh 'cd extra'
-            }
-        }
+       
 
         stage('SonarQube Analysis') {
             steps {
